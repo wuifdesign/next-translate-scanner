@@ -1,0 +1,50 @@
+{
+  "name": "next-translate-scanner",
+  "version": "0.1.0",
+  "description": "Scan next-translate code for translations and update json files.",
+  "main": "lib/index.js",
+  "bin": {
+    "next-translate-scanner": "./dist/cli.js"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "run": "ts-node ./src/cli.ts --config _test-files/next-translate-scanner.config.js",
+    "run-help": "ts-node ./src/cli.ts --help",
+    "run-builded": "node ./dist/cli.js --config _test-files/next-translate-scanner.config.js",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuifdesign/next-translate-scanner.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wuifdesign/next-translate-scanner/issues"
+  },
+  "homepage": "https://github.com/wuifdesign/next-translate-scanner#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.0.0",
+    "glob": "^7.2.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/glob": "^7.2.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.18",
+    "@types/rimraf": "^3.0.2",
+    "@types/vinyl": "^2.0.6",
+    "jest": "^27.5.1",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
+}

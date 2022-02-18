@@ -1,0 +1,15 @@
+{
+  "key": "de_translation",
+  "first_one": "de_first",
+  "first_other": "de_first plural",
+  "second_one": "de_second",
+  "second_zero": "de_second plural zero",
+  "second_other": "de_second plural other",
+  "my": {
+    "nested": {
+      "key": "de_nested key",
+      "plural_one": "de_plural",
+      "plural_other": "de_plural plural"
+    }
+  }
+}
