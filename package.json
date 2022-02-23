@@ -2,6 +2,13 @@
   "name": "next-translate-scanner",
   "version": "0.1.0",
   "description": "Scan next-translate code for translations and update json files.",
+  "keywords": [
+    "next-translate",
+    "parser",
+    "scanner",
+    "cli",
+    "commandline"
+  ],
   "main": "lib/index.js",
   "bin": {
     "next-translate-scanner": "./dist/cli.js"
@@ -23,7 +30,6 @@
     "type": "git",
     "url": "git+https://github.com/wuifdesign/next-translate-scanner.git"
   },
-  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wuifdesign/next-translate-scanner/issues"

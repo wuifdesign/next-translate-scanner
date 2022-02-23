@@ -20,7 +20,7 @@ This package parses your code and automates this process.
 ### CLI
 
 ```bash
-npm install next-translate-scanner
+npm install next-translate-scanner -D
 ```
 
 ```js
