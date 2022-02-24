@@ -8,6 +8,7 @@ const getMergedConfig = () => {
   let config: ScannerConfig = {
     input: [],
     locales: ['en'],
+    pseudoLocale: null,
 
     keySeparator: '.',
     nsSeparator: ':',

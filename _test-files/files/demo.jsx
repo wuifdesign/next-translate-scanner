@@ -6,7 +6,7 @@ export default function Description() {
   const title = t('title')
   const nested = t('my.nested.key')
   const description = t`description`
-  const example = t('ns2:example', { count: 3 })
+  const example = t('ns2:example', { count: 3 }, { default: 'Example {{count}}' })
 
   return (
     <>

@@ -3,6 +3,7 @@ import { ScannerConfig } from '../src/types/scanner-config.type'
 const testConfig: ScannerConfig = {
   input: [],
   locales: ['en', 'de'],
+  pseudoLocale: null,
 
   keySeparator: '.',
   nsSeparator: ':',

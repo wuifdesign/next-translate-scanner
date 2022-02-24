@@ -13,7 +13,7 @@ describe('extractTranslations', () => {
       { key: 'title', ns: 'ns1' },
       { key: 'my.nested.key', ns: 'ns1' },
       { key: 'description', ns: 'ns1' },
-      { key: 'example', options: { count: 3 }, isPlural: true, ns: 'ns2' }
+      { key: 'example', options: { count: 3 }, isPlural: true, ns: 'ns2', default: 'Example {{count}}' }
     ])
   })
 })

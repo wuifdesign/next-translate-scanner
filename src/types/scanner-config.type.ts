@@ -4,6 +4,10 @@ export type ScannerConfig = {
   input: string[] | string
   output: string
   locales: string[]
+  pseudoLocale: null | {
+    locale: string
+    baseLocale: string
+  }
 
   keySeparator: string
   nsSeparator: string

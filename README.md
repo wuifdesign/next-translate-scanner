@@ -57,6 +57,11 @@ type ScannerConfig = {
   input: string[] | string
   // Available locales, can be importet from i18n.js
   locales: string[]
+  // Used to create a pseudo locale for testing purposes
+  pseudoLocale: null | {
+    locale: string
+    baseLocale: string
+  }
 
   // Change the separator that is used for nested keys. Set to false to disable keys nesting in JSON translation files. Can be useful if you want to use natural text as keys.
   keySeparator: string
@@ -79,6 +84,27 @@ type ScannerConfig = {
   replaceDefaults: boolean
   // Fail the task if any warning is triggered
   failOnWarnings: boolean
+}
+```
+
+### Pseudo Locale
+
+```js
+module.exports = {
+  ...,
+  pseudoLocale: {
+    locale: 'zu', // Any locale you don't use and want to use for testing the pseudo locale
+    baseLocale: 'en', // Base Locale used for extracting translations to create pseudo locale
+  }
+}
+```
+
+This will create translation files looking like this:
+
+```
+// zu.json
+{
+  "example": "ḖḖẋȧȧḿƥŀḗḗ"
 }
 ```
 

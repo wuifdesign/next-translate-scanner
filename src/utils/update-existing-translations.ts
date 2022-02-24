@@ -21,17 +21,19 @@ const updateExistingTranslations = (newTranslations: ExtractedTranslations, exis
       let temp = { ...newTranslations[namespace] }
       if (existingTranslations[locale]?.[namespace]) {
         for (const [existingKey, existingTranslation] of Object.entries(existingTransForNamespace)) {
-          let newTrans = existingTranslation
-          if (config.replaceDefaults) {
-            newTrans = temp[existingKey] || existingTranslation
-            if (isPluralKey(existingKey)) {
-              const noPluralKey = keyWithoutPlural(existingKey)
-              if (temp[`${noPluralKey}_other`] && (!existingKey.endsWith('_one') && !existingKey.endsWith('_other'))) {
-                continue
+          if (!!existingTranslation) {
+            let newTrans = existingTranslation
+            if (config.replaceDefaults) {
+              newTrans = temp[existingKey] || existingTranslation
+              if (isPluralKey(existingKey)) {
+                const noPluralKey = keyWithoutPlural(existingKey)
+                if (temp[`${noPluralKey}_other`] && (!existingKey.endsWith('_one') && !existingKey.endsWith('_other'))) {
+                  continue
+                }
               }
             }
+            temp[existingKey] = newTrans
           }
-          temp[existingKey] = newTrans
         }
       }
       if (config.sort) {

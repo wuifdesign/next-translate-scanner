@@ -11,6 +11,7 @@ import loadExistingTranslations from './utils/load-existing-translations'
 import unFlattenObject from './utils/un-flatten-object'
 import rimraf from 'rimraf'
 import writeTranslationFiles from './utils/write-translation-files'
+import addPseudoLocale from './utils/add-pseudo-locale'
 
 const pkg = require('../package.json')
 
@@ -61,7 +62,11 @@ if (config.failOnWarnings && Logger.getWarningCount() > 0) {
 }
 
 const existingTranslations = loadExistingTranslations(config)
-const mergedTranslations = updateExistingTranslations(translationsWithNamespace, existingTranslations, config)
+let mergedTranslations = updateExistingTranslations(translationsWithNamespace, existingTranslations, config)
+
+if (config.pseudoLocale) {
+  mergedTranslations = addPseudoLocale(mergedTranslations, config.pseudoLocale.baseLocale, config.pseudoLocale.locale)
+}
 
 if (!!config.keySeparator) {
   for (const [locale, namespaces] of Object.entries(mergedTranslations)) {

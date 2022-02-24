@@ -6,6 +6,7 @@ const existingTranslations = {
   en: {
     common: {
       key: 'en_translation',
+      key_empty: '',
       first_zero: 'en_first zero',
       first_one: 'en_first',
       first_other: 'en_first plural',
@@ -24,6 +25,7 @@ const existingTranslations = {
   de: {
     common: {
       key: 'de_translation',
+      key_empty: '',
       first_zero: 'de_first zero',
       first_one: 'de_first',
       first_other: 'de_first plural',
@@ -44,6 +46,7 @@ const existingTranslations = {
 const newTranslations: ExtractedTranslations = {
   common: {
     key: 'new translation',
+    key_empty: 'new empty translation',
     first_one: 'new first',
     first_other: 'new first',
     newKey: 'new translation key',
@@ -60,6 +63,7 @@ describe('updateExistingTranslations', () => {
       en: {
         common: {
           key: 'en_translation',
+          key_empty: 'new empty translation',
           first_zero: 'en_first zero',
           first_one: 'en_first',
           first_other: 'en_first plural',
@@ -80,6 +84,7 @@ describe('updateExistingTranslations', () => {
       de: {
         common: {
           key: 'de_translation',
+          key_empty: 'new empty translation',
           first_zero: 'de_first zero',
           first_one: 'de_first',
           first_other: 'de_first plural',
@@ -108,6 +113,7 @@ describe('updateExistingTranslations', () => {
       en: {
         common: {
           key: 'en_translation',
+          key_empty: 'new empty translation',
           first_zero: 'en_first zero',
           first_one: 'en_first',
           first_other: 'en_first plural',
@@ -121,6 +127,7 @@ describe('updateExistingTranslations', () => {
       de: {
         common: {
           key: 'de_translation',
+          key_empty: 'new empty translation',
           first_zero: 'de_first zero',
           first_one: 'de_first',
           first_other: 'de_first plural',
@@ -142,6 +149,7 @@ describe('updateExistingTranslations', () => {
       en: {
         common: {
           key: 'new translation',
+          key_empty: 'new empty translation',
           first_one: 'new first',
           first_other: 'new first',
           newKey: 'new translation key',
@@ -161,6 +169,7 @@ describe('updateExistingTranslations', () => {
       de: {
         common: {
           key: 'new translation',
+          key_empty: 'new empty translation',
           first_one: 'new first',
           first_other: 'new first',
           newKey: 'new translation key',

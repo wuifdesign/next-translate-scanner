@@ -29,6 +29,26 @@ describe('translationsToNamespaceMap', () => {
     })
   })
 
+  it('should prefer translations with default', () => {
+    expect(translationsToNamespaceMap([
+      { key: 'example', ns: 'common' },
+      { key: 'example', ns: 'common', default: 'Value 1' },
+      { key: 'example', ns: 'common', default: 'Value 2' },
+      { key: 'example', ns: 'common', default: '' },
+      { key: 'example', ns: 'ns2', options: { count: 3 }, isPlural: true, default: '' },
+      { key: 'example', ns: 'ns2', options: { count: 3 }, isPlural: true, default: 'Value 1' },
+      { key: 'example', ns: 'ns2', options: { count: 3 }, isPlural: true, default: 'Value 2' },
+      { key: 'example', ns: 'ns2', options: { count: 3 }, isPlural: true, default: '' }
+    ], testConfig)).toEqual({
+      common: { example: 'Value 1' },
+      ns2: { example_one: 'Value 1', example_other: 'Value 1' }
+    })
+    expect(Logger.getWarnings()).toEqual([
+      'Same key with different default value found: common:example',
+      'Same key with different default value found: ns2:example'
+    ])
+  })
+
   it('should extract translations with different default', () => {
     expect(translationsToNamespaceMap([
       { key: 'example', ns: 'common' },
