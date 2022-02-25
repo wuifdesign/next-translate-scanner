@@ -1,6 +1,6 @@
 import { ExtractedTranslations } from '../types/extracted-translations.type'
-import pseudoLocalization from 'pseudo-localization'
 import Logger from './logger'
+import pseudoLocalizeString from './pseudo-localize'
 
 const addPseudoLocale = (translations: Record<string, ExtractedTranslations>, baseLocale: string, pseudoLocale: string) => {
   if (!translations[baseLocale]) {
@@ -19,7 +19,7 @@ const addPseudoLocale = (translations: Record<string, ExtractedTranslations>, ba
         } else if (char === '>' || (char + split[index + 1]) === '}}') {
           enabled = true
         }
-        return enabled ? pseudoLocalization.localize(char) : char
+        return enabled ? pseudoLocalizeString(char) : char
       }).join('')
     }
     translations[pseudoLocale][ns] = temp
